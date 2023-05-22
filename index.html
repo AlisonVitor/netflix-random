@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Filmes Aleatórios</title>
+</head>
+<link rel="stylesheet" type="text/css" href="main.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<body>
+
+    <div class="header">
+        <button onclick="mostrarConteudo('conteudo1')">Filmes Aleatórios</button>
+        <button onclick="mostrarConteudo('conteudo2')">Sorteio de Filmes</button>
+        <button onclick="mostrarConteudo('conteudo3')">No seu Gosto</button>
+      </div>
+
+
+  <div id="conteudo1" class="conteudo" style="display: block;">
+        <div class="container">
+          
+            <h1>Estou com sorte NETFLIX</h1>
+            <img id="imagemnetflix" src="img/logotipo-da-netflix.jpg" alt="logo netflix" sizes="" srcset="" style="display: block;" width="60%">
+           <div id="loading" class="loading hidden"></div>
+           <div id="imagem-container" class="hidden">
+             <img id="imagem-aleatoria" src="" alt="Imagem Aleatória">
+             <div id="botao-link" class="hidden">
+               <a  href="#" id="link-externo" target="_blank" >  <img id="link-netflix" src="img/logotipo-da-netflix.jpg" alt="Texto alternativo da imagem" width="80px">
+               </a>
+             </div>
+           </div>
+           <button class="botao-sortear"  onclick="sortearImagem()">Sortear</button>
+       </div>
+  </div>
+
+<div id="conteudo2" class="conteudo" style="display: none;">
+ <div class="container">
+  <div class="dropdown"  style="display: block;" > 
+    <button onclick="toggleDropdown('dropdown1')">Filme 1</button>
+    <div id="dropdown-content1" class="dropdown-content">
+      <img src="img/alemdamorte.jpg" onclick="selectMovie('img/alemdamorte.jpg', 'selected-movie1', '1')" alt="Filme 1">
+      <img src="img/awake.jpg" onclick="selectMovie('img/awake.jpg', 'selected-movie1', '1')" alt="Filme 2">
+      <img src="img/ela.jpg" onclick="selectMovie('img/ela.jpg', 'selected-movie1', '1')" alt="Filme 2">
+
+      <!-- Adicione mais opções de filmes aqui -->
+    </div>
+  </div>
+  <div id="selected-movie1"></div>
+
+  <div class="dropdown"  style="display: block;">
+    <button onclick="toggleDropdown('dropdown2')">Filme 2</button>
+    <div id="dropdown-content2" class="dropdown-content">
+      <img src="img/alemdamorte.jpg" onclick="selectMovie('img/alemdamorte.jpg', 'selected-movie2', '2')" alt="Filme 1">
+      <img src="img/awake.jpg" onclick="selectMovie('img/awake.jpg', 'selected-movie2', '2')" alt="Filme 2">
+      <img src="img/ela.jpg" onclick="selectMovie('img/ela.jpg', 'selected-movie2', '2')" alt="Filme 2">
+
+      <!-- Adicione mais opções de filmes aqui -->
+    </div>
+  </div>
+  <div id="selected-movie2"></div>
+
+  <button onclick="drawWinner()">Sortear Vencedor</button>
+  
+  <div id="loading" class="loading hidden"></div>
+  <div id="winner" class="hidden">
+    
+    <h3 style="margin-left: 96px; ">Sorteado:</h3>
+    <div id="winner-image"></div>
+    <p id="winner-text"></p>
+    
+  </div>
+</div>
+</div>
+
+<script src="aleatorio.js"></script>
+</body>
+</html>
